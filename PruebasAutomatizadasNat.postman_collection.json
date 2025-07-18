@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "f5681d8c-9604-49cc-b277-6dc95732a567",
+		"name": "PruebasAutomatizadasNat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44690468"
+	},
+	"item": [
+		{
+			"name": "PruebasAutomatizadas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar nombre es Leanne Graham\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.name).to.eql(\"Leanne Graham\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar email correcto\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.email).to.eql(\"Sincere@april.biz\");\r",
+							"});\r",
+							"pm.test(\"Validar latitud es -37.3159\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.address.geo.lat).to.eql(\"-37.3159\");\r",
+							"});\r",
+							"pm.test(\"Validar longitud es 82.1496\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.address.geo.lng).to.eql(\"82.1496\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
